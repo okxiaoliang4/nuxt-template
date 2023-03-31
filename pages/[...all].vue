@@ -1,17 +1,41 @@
-<script setup lang="ts">
-const router = useRouter()
+<script lang="ts" setup>
 </script>
 
 <template>
-  <main p="x4 y10" text="center teal-700 dark:gray-200">
-    <div text-4xl>
-      <div i-carbon-warning inline-block />
-    </div>
-    <div>Not found</div>
-    <div>
-      <button btn text-sm m="3 t8" @click="router.back()">
-        Back
-      </button>
-    </div>
-  </main>
+  <div class="page-not-found">
+    <h1>404</h1>
+    <p>Page not found.</p>
+  </div>
 </template>
+
+<style>
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 10rem;
+  margin-bottom: 0;
+  text-align: center;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+p {
+  font-size: 2rem;
+  text-align: center;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+}
+</style>

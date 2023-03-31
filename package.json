@@ -13,6 +13,9 @@
     "lint:fix": "eslint . --fix",
     "prepare": "husky install"
   },
+  "dependencies": {
+    "@tanstack/vue-query": "^4.27.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.0",
     "@commitlint/cli": "^17.5.1",

@@ -9,5 +9,6 @@ definePageMeta({
 <template>
   <div>
     Hello
+    <ElButton>123</ElButton>
   </div>
 </template>

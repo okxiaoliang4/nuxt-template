@@ -9,7 +9,17 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxt/devtools',
+    '@element-plus/nuxt',
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/scss/element/index.scss" as element;',
+        },
+      },
+    },
+  },
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
     // but missing on offline, disabling extraction it until fixed
@@ -50,4 +60,12 @@ export default defineNuxtConfig({
     },
   },
   pwa,
+  vueuse: {
+    ssrHandlers: true,
+  },
+  elementPlus: {
+    icon: 'ElIcon',
+    importStyle: 'scss',
+    themes: ['dark'],
+  },
 })

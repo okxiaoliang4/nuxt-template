@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// @ts-expect-error types
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import { appName } from '~/constants'
 
 useHead({
@@ -8,22 +10,12 @@ useHead({
 
 <template>
   <VitePwaManifest />
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <ElConfigProvider :locale="zhCn">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </ElConfigProvider>
 </template>
 
 <style>
-html,
-body,
-#__nuxt {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-html.dark {
-  background: #222;
-  color: white;
-}
 </style>
